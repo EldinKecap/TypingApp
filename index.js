@@ -2,7 +2,14 @@ let text = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, nam
 
 function startTyping(){
     let typingBox = document.getElementById('typingBox');
-    // typingBox.innerHTML = '';
+    let arrOfSetTimeouts = [];
+
+    if (typingBox.innerHTML != '') {
+        arrOfSetTimeouts
+    }
+
+    typingBox.innerHTML = '';
+
     // scrambler
     // for (let i = 0; i < text.length; i++) {
     //     let timeoutTime = Math.floor(Math.random()*10000);
@@ -25,6 +32,18 @@ function startTyping(){
     //     console.log(intervalTime);
     // },intervalTime)
     let i = 0;
+    (function loop() {
+        var rand = Math.round(Math.random() * 500);
+        setTimeout(function() {
+            typingBox.innerHTML = typingBox.innerHTML.concat(text[i]);
+            i++;
+            if (i >= text.length) {
+                return;
+            }
+                loop();  
+        }, rand);
+    }());
+    //Radi i nije modifikovano
     // (function loop() {
     //     var rand = Math.round(Math.random() * 500);
     //     setTimeout(function() {
@@ -37,15 +56,21 @@ function startTyping(){
     //     }, rand);
     // }());
 
-    function smth() {
-        var rand = Math.round(Math.random() * 500);
-        setTimeout(function() {
-            typingBox.innerHTML = typingBox.innerHTML.concat(text[i]);
-            i++;
-            if (i >= text.length) {
-                return;
-            }
-    }
+//     function smth() {
+//         var rand = Math.round(Math.random() * 10500);
+//         setTimeout(function() {
+//             typingBox.innerHTML = typingBox.innerHTML.concat(text[i]);
+//             i++;
+//             if (i >= text.length) {
+//                 return;
+//             }
+//     });
+
+// }
+//     for (let j = 0; j < text.length; j++) {
+//         smth();
+//         console.log('bog');
+//     }
+
 
 }
-
