@@ -11,29 +11,34 @@ async function startTyping(){
     text = text.joke
     let i = 0;
     let newElement = document.createElement('p');
-    typingBox.appendChild(newElement)
+    let blinker = document.createElement('span');
+    blinker.innerHTML = '|';
+    typingBox.appendChild(newElement);
     function loop() {
         var rand = Math.round(Math.random() * 250);
         setTimeout(function() {
             newElement.innerHTML = text.slice(0,i);
+            newElement.appendChild(blinker);
             i++;
             if (rand > 240) {
                 let letters = ['a','e','i','o','u'];
+                newElement.removeChild(blinker);
                 newElement.innerHTML = newElement.innerHTML.concat(letters[Math.floor(Math.random()*4)]);
-                
+                newElement.appendChild(blinker);
                 i-=2;             
             }
             
             
             if (i >= text.length) {
+                blinker.className = 'blink';
                 return;
             }
                 loop();  
         }, rand);
     };
-
+    
     loop();
-
+    
 }
 
 async function fastTyping(){
@@ -42,24 +47,30 @@ async function fastTyping(){
     text = text.joke
     let i = 0;
     let newElement = document.createElement('p');
-    typingBox.appendChild(newElement)
+    let blinker = document.createElement('span');
+    blinker.innerHTML = '|';
+    typingBox.appendChild(newElement);
     function loop() {
         var rand = Math.round(Math.random() * 100);
         setTimeout(function() {
             newElement.innerHTML = text.slice(0,i);
+            newElement.appendChild(blinker);
             i++;
             if (rand > 95) {
                 let letters = ['a','e','i','o','u'];
                 newElement.innerHTML = newElement.innerHTML.concat(letters[Math.floor(Math.random()*4)]);  
-                i-=2;             
+                newElement.appendChild(blinker)
+                i--;             
             }
             
             
-            if (i >= text.length) {
+            if (i > text.length) {
+                blinker.className = 'blink';
                 return;
             }
                 loop();  
         }, rand);
+        // console.log('ye');
     };
 
     loop();

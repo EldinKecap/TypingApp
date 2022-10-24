@@ -48,5 +48,23 @@ button{
 
 button:hover{
     background-color: #5c5c5c;
+}
 
+/* Implementing a blinker */
+
+.blink {
+    padding-left: 0px;
+    /* border-right: solid 1px white; */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0%{
+       opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
