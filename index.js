@@ -25,7 +25,7 @@ async function startTyping(){
                 newElement.removeChild(blinker);
                 newElement.innerHTML = newElement.innerHTML.concat(letters[Math.floor(Math.random()*4)]);
                 newElement.appendChild(blinker);
-                i-=2;             
+                i--;             
             }
             
             
@@ -55,9 +55,11 @@ async function fastTyping(){
         setTimeout(function() {
             newElement.innerHTML = text.slice(0,i);
             newElement.appendChild(blinker);
+            
             i++;
             if (rand > 95) {
                 let letters = ['a','e','i','o','u'];
+                newElement.removeChild(blinker);
                 newElement.innerHTML = newElement.innerHTML.concat(letters[Math.floor(Math.random()*4)]);  
                 newElement.appendChild(blinker)
                 i--;             
