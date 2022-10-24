@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #343434;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    height: 100vh;
+    color: white;
+    font-family: monospace;
+}
+
+#title{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+#bottom{
+    background-color: #1B1B1B;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+#typingBox{
+    height: fit-content;
+    padding: 0px 20px;
+}
+
+button{
+    display: block;
+    background-color: #4E4E4E;
+    color: white;
+    padding: 0.5em;
+    border: 1px solid ;
+    border-radius: 5px;
+    width: 100px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #5c5c5c;
+
+}
