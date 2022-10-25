@@ -25,7 +25,15 @@ body{
     padding: 20px;
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    border-top:solid rgb(191, 190, 190);
+}
+
+@media(max-width:450px){
+    #bottom{
+        flex-grow: 0;
+    }
 }
 
 #typingBox{
@@ -50,6 +58,12 @@ button:hover{
     background-color: #5c5c5c;
 }
 
+#buttonContainer{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+}
+
 /* Implementing a blinker */
 
 .blink {
@@ -66,5 +80,52 @@ button:hover{
     }
     100%{
         opacity: 0;
+    }
+}
+
+#userInput{
+    /* -webkit-appearance: none; */
+    background-color: #5c5c5c;
+    border: 1px solid white;
+    border-radius: 100px;
+    caret-color: rgb(137, 137, 137);
+    height: 20px;
+    color: white;
+    padding-left: 1rem;
+    font-family: monospace;
+    padding-right: 2rem;
+}
+
+#userInput::placeholder{
+    color: rgb(190, 190, 190);
+}
+
+/* styling mode button */
+
+#mode{
+    margin-left:10px ;
+    width: 40px;
+    height: 20px;
+    background-color: #7e7e7e;
+    border-radius: 50px;
+    padding: 3px;
+}
+
+#modeButton{
+    width:20px;
+    position: relative;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideDM{
+    0%{
+        left:0px;
+    }
+    100%{
+        left:20px
     }
 }

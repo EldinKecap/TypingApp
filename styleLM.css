@@ -1,0 +1,131 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #e3e1e1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    height: 100vh;
+    color: black;
+    font-family: monospace;
+}
+
+#title{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+#bottom{
+    background-color: #b9b8b8ce;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top:solid rgb(0, 0, 0);
+}
+
+@media(max-width:450px){
+    #bottom{
+        flex-grow: 0;
+    }
+}
+
+#typingBox{
+    height: fit-content;
+    padding: 0px 20px;
+}
+
+button{
+    display: block;
+    background-color: #7e7e7e;
+    color: black;
+    padding: 0.5em;
+    border: 1px solid ;
+    border-radius: 5px;
+    width: 100px;
+    font-family: inherit;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover{
+    background-color: #c4c4c4;
+}
+
+#buttonContainer{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+}
+
+/* Implementing a blinker */
+
+.blink {
+    padding-left: 0px;
+    /* border-right: solid 1px black; */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0%{
+       opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#userInput{
+    /* -webkit-appearance: none; */
+    background-color: #9a9999;
+    border: 1px solid black;
+    border-radius: 100px;
+    caret-color: rgb(101, 101, 101);
+    height: 20px;
+    color: black;
+    padding-left: 1rem;
+    font-family: monospace;
+    padding-right: 2rem;
+}
+
+#userInput::placeholder{
+    color: rgb(71, 71, 71);
+}
+
+/* styling mode button */
+
+#mode{
+    margin-left:10px ;
+    width: 40px;
+    height: 20px;
+    background-color: #7e7e7e;
+    border-radius: 50px;
+    padding: 3px;
+}
+
+#modeButton{
+    width:20px;
+    position: relative;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideLM{
+    0%{
+        left:20px;
+    }
+    100%{
+        left:0px
+    }
+}

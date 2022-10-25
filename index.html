@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styleLM.css" id="cssLink">
     <script defer src="./index.js"></script>
     <title>Joke Typing app</title>
 </head>
 <body>
     <h1 id="title">Welcome to Joke Typer</h1>
+    <div id="mode"><div id="modeButton"></div></div>
     <p id="typingBox"></p>
-    <div id="bottom">        
-        <button id="typeOut">Type me out a joke</button>
-        <button id="typeOutFast">Type out a joke fast</button>
+    <div id="bottom">  
+        <input type="text" id="userInput" placeholder="Write your own joke...">
+        <div id="buttonContainer">
+            <button id="typeOutSlow">Type out a joke slow</button>
+            <button id="typeOut">Type me out a joke</button>
+            <button id="typeOutFast">Type out a joke fast</button>
+        </div>
     </div>
 </body>
 </html>
